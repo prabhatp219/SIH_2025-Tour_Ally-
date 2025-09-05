@@ -1,0 +1,62 @@
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: #f1f5f9;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Section Header */
+.section-header h1 {
+  font-size: 2.5rem;
+  color: #38bdf8; /* sky blue accent */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #cbd5e1; /* soft gray */
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Insights Cards Grid */
+.insights-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Individual Card */
+.card {
+  background: #1e293b; /* dark slate */
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+/* Card Title */
+.card h3 {
+  font-size: 1.3rem;
+  color: #f97316; /* reddish-orange accent */
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+/* Card Text */
+.card p {
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+}

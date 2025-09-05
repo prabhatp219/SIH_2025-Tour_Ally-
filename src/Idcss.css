@@ -1,0 +1,161 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Roboto", sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Container */
+.idl-container {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.idl-wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ====== Form Card ====== */
+.form-card {
+  background: #1e293b;
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #38bdf8;
+}
+
+.form-card label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.form-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form-card button:hover {
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+  color: #fff;
+}
+
+/* ====== Preview Card ====== */
+.preview-card {
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.preview-card .verified-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #22d3ee, #0ea5e9);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.preview-header .secured {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.preview-header .blockchain-id {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 221, 248, 0.7);
+  letter-spacing: 2px;
+}
+
+/* ====== Details ====== */
+.my-details-card {
+  margin-top: 10px;
+}
+
+.my-details-item {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.my-details-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* QR Section */
+.qr-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.qr-container canvas {
+  margin: auto;
+}
+
+.qr-container small {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}

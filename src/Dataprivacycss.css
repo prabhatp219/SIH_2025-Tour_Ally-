@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+      rgba(15, 23, 42, 0.6),
+      rgba(15, 23, 42, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80")
+      no-repeat center/cover;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Cards */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  color: #06b6d4;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Feature Icons */
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: inline-block;
+  color: #facc15; /* yellow icons */
+}
+
+/* Section Background (alt) */
+section {
+  padding: 60px 20px;
+}
+
+section:nth-of-type(even) {
+  background: #111827;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+  color: #94a3b8;
+  margin-top: 40px;
+  border-radius: 12px 12px 0 0;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
