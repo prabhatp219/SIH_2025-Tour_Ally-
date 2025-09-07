@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff; /* changed to white */
+  color: #000; /* default text color black for readability */
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f5f5; /* light grey for the card area */
+}
+
+.signup-card {
+  background: #ffffff; /* white card */
+  padding: 40px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* lighter shadow for white background */
+  text-align: center;
+  
+}
+
+.signup-card h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #000; /* heading black */
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.social-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-btn { background: #4285F4; }
+.github-btn { background: #333; }
+.gitlab-btn { background: #FC6D26; }
+
+.or {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #555; /* darker grey for readability */
+}
+
+form input {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f0f0f0; /* light grey input background */
+  color: #000; /* black text */
+}
+
+/* Placeholder text */
+form input::placeholder {
+  color: #888; /* grey placeholder text */
+  opacity: 1;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #000; /* black button for contrast */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff; /* white text on button */
+}
+
+.signup-btn:hover {
+  background: #333; /* slightly lighter on hover */
+}
+
+.terms {
+  font-size: 12px;
+  color: #555; /* dark grey text */
+  margin-top: 10px;
+}
+
+.terms a {
+  color: #000; /* black link for white background */
+  text-decoration: none;
+}
+
+.login-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-link a {
+  color: #000;
+  text-decoration: none;
+}

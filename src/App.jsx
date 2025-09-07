@@ -9,6 +9,7 @@ import './Panicbuttoncss.css'
 import './Aimonitoringcss.css'
 import './Dataprivacycss.css'
 import './Touristinsightscss.css'
+import './pages/Signupcss.css'
 import Id from "./Id";
 import Index7 from './index7'
 import Aimonitoring from './Aimonitoring'
@@ -16,6 +17,7 @@ import Dataprivacy from './Dataprivacy'
 import Geofencing from './Geofencing'
 import Panicbutton from './Panicbutton'
 import Touristinsights from './Touristinsights'
+import Signup  from './pages/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +32,7 @@ function App() {
         <Route path="/geofencing" element={<Geofencing />} />
         <Route path="/panicbutton" element={<Panicbutton />} />
         <Route path="/touristinsights" element={<Touristinsights />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );

@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Index7 = () => {
+  const navigate = useNavigate();
   return (
+    
     <div>
       {/* Navbar */}
       <header>
         <h1>Smart Tourist Safety</h1>
         <nav>
-           <div
+          <div
             style={{
               display: "inline-block",
               marginRight: "15px",
@@ -43,7 +45,7 @@ const Index7 = () => {
           >
             About
           </div>
-           <div
+          <div
             style={{
               display: "inline-block",
               marginRight: "15px",
@@ -61,7 +63,7 @@ const Index7 = () => {
           >
             Features
           </div>
-           <div
+          <div
             style={{
               display: "inline-block",
               marginRight: "15px",
@@ -79,7 +81,7 @@ const Index7 = () => {
           >
             Dashboard
           </div>
-           <div
+          <div
             style={{
               display: "inline-block",
               marginRight: "15px",
@@ -97,6 +99,22 @@ const Index7 = () => {
           >
             Contact
           </div>
+         <div
+            style={{
+              display: "inline-block",
+              marginLeft: "20px",
+              cursor: "pointer",
+              padding: "8px 16px",
+              backgroundColor: "#ff9800",
+              borderRadius: "5px",
+              color: "white",
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+            onClick={() => navigate("/signup")} // SPA navigation using React Router
+          >
+            Sign Up
+          </div> 
         </nav>
       </header>
 

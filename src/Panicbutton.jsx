@@ -54,7 +54,7 @@ export default function PanicButton() {
     // Send SMS via backend
     axios.post("http://localhost:5000/send-sms", {
       to: sosNumber,
-      message: `🚨 SOS! I need help! My location: ${mapLink}`,
+      message: `🚨Emergency SOS! I need help, Please help I am in danger🚨! My location: ${mapLink}`,
     })
     .then(res => {
       console.log("SMS sent:", res.data);
