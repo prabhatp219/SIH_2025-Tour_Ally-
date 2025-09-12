@@ -72,7 +72,12 @@ Arrival: ${data.arrival}, Exit: ${data.exit}`;
 
   return (
     <div style={{ background: "#0f172a", color: "#f1f5f9", padding: "40px", fontFamily: "Roboto, sans-serif" }}>
-      <div style={{ maxWidth: "900px", margin: "auto", display: "flex", flexDirection: "column", gap: "30px" }}>
+      <div style={{  maxWidth: "900px",
+    margin: "auto",
+    display: "flex",
+    flexDirection: "row", // side by side
+    justifyContent: "space-between", // spacing between them
+    gap: "30px"}}>
         {/* Form Card */}
         <div style={{
           background: "#1e293b", borderRadius: "15px", padding: "30px 25px",

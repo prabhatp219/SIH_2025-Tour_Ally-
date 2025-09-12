@@ -1,17 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './Signupcss.css';
 
-export default function Signup() {
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: ""
-  });
+  export default function Signup() {
+    const [form, setForm] = useState({
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: ""
+    });
 
   const [message, setMessage] = useState(""); // For success/error messages
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,13 +22,21 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form data sent:", form); 
+    console.log("`187")
     try {
-      const res = await axios.post("http://localhost:6000/api/signup", form);
-
+      console.log("142");
+      // const res = await axios.post("http://localhost:3000/api/signup", form);
+      const res = await axios.post("https://smarttouristsafety.onrender.com/api/auth/signup", form);
+      console.log("12892");
       // Show success message
       setMessage(res.data.message);
-
+      console.log(res.data.message);
       // Clear form fields
+      // ✅ Navigate to home if signup is successful
+if (res.status === 201) {
+  navigate("/");
+}
+
       setForm({
         firstName: "",
         lastName: "",
@@ -46,8 +56,8 @@ export default function Signup() {
         <h2>Register with:</h2>
         <div className="social-buttons">
           <button className="google-btn" type="button">Google</button>
-          <button className="github-btn" type="button">Github</button>
-          <button className="gitlab-btn" type="button">Gitlab</button>
+          {/* <button className="github-btn" type="button">Github</button> */}
+          {/* <button className="gitlab-btn" type="button">Gitlab</button> */}
         </div>
         <div className="or">Or</div>
 
@@ -108,7 +118,7 @@ export default function Signup() {
         </p>
 
         <p className="login-link">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account? <a href="/signin">Sign In</a>
         </p>
       </div>
     </div>

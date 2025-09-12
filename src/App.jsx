@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
-import './App.css'
-import './index.css'
-import './Index7css.css'
+// import './App.css'
+// import './index.css'
+import './Index7css.css'  
 import './Idcss.css'
 import './Geofencingcss.css'
 import './Panicbuttoncss.css'
 import './Aimonitoringcss.css'
 import './Dataprivacycss.css'
 import './Touristinsightscss.css'
+import './GpsLogsViewercss.css'
 import './pages/Signupcss.css'
+import './pages/Signincss.css'
 import Id from "./Id";
 import Index7 from './index7'
 import Aimonitoring from './Aimonitoring'
@@ -18,6 +20,9 @@ import Geofencing from './Geofencing'
 import Panicbutton from './Panicbutton'
 import Touristinsights from './Touristinsights'
 import Signup  from './pages/Signup'
+import Signin  from './pages/Signin'
+import GpsLogsViewer from './GpsLogsViewer'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,7 +37,9 @@ function App() {
         <Route path="/geofencing" element={<Geofencing />} />
         <Route path="/panicbutton" element={<Panicbutton />} />
         <Route path="/touristinsights" element={<Touristinsights />} />
+        <Route path="/gpslogsviewer" element={<GpsLogsViewer />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} /> 
       </Routes>
     </>
   );

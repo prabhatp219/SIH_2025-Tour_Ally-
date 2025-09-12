@@ -7,7 +7,7 @@ export default function Dataprivacy() {
       <section className="hero">
         <div className="container">
           <h1>Smart Tourist Data Privacy & Security</h1>
-          <p>
+          <p style={{color:"black"}}>
             We protect your location, travel itinerary, and personal data while
             ensuring real-time safety monitoring during your travels.
           </p>
@@ -19,7 +19,7 @@ export default function Dataprivacy() {
         <div className="container">
           <div className="section-title">
             <h2>How We Secure Tourist Data</h2>
-            <p>
+            <p style={{color:"white"}}>
               Our system uses advanced technology to keep your personal and
               travel data safe at all times.
             </p>
@@ -28,7 +28,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">🔒</div>
               <h3>Location Encryption</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Your real-time location and route data are encrypted end-to-end,
                 ensuring privacy from unauthorized access.
               </p>
@@ -36,7 +36,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">🛡️</div>
               <h3>Secure Travel Records</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Itineraries, check-ins, and travel history are stored securely
                 on protected servers with multi-layer security.
               </p>
@@ -44,7 +44,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">📜</div>
               <h3>Blockchain Verification</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Digital Tourist IDs and travel logs are verified via blockchain
                 to ensure authenticity and prevent tampering.
               </p>
@@ -52,7 +52,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">👤</div>
               <h3>Access Control</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Only authorized personnel or emergency contacts can access
                 sensitive tourist data when necessary.
               </p>
@@ -60,7 +60,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">⚡</div>
               <h3>Real-Time Monitoring</h3>
-              <p>
+              <p style={{color:"black"}}>
                 AI-powered monitoring detects anomalies, deviations, and
                 potential risks during your trip.
               </p>
@@ -68,7 +68,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">🧩</div>
               <h3>Minimal Data Usage</h3>
-              <p>
+              <p style={{color:"black"}}>
                 We collect only essential travel and safety information to
                 reduce exposure while keeping you secure.
               </p>
@@ -82,7 +82,7 @@ export default function Dataprivacy() {
         <div className="container">
           <div className="section-title">
             <h2>Tourist Data Privacy Best Practices</h2>
-            <p>
+            <p style={{color:"black"}}>
               Tips to enhance your safety and privacy while using our smart
               tourist system.
             </p>
@@ -91,7 +91,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">🔑</div>
               <h3>Use Secure Devices</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Keep your phone and GPS-enabled devices secure with passwords or
                 biometric locks.
               </p>
@@ -99,7 +99,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">📱</div>
               <h3>Enable Location Permissions Carefully</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Only allow trusted applications to access your location and
                 travel data.
               </p>
@@ -107,7 +107,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">👀</div>
               <h3>Review App Sharing</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Regularly check which apps have access to your travel and safety
                 data.
               </p>
@@ -115,7 +115,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">❌</div>
               <h3>Limit Public Sharing</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Avoid sharing travel plans or location publicly to reduce safety
                 risks.
               </p>
@@ -123,7 +123,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">⚠️</div>
               <h3>Be Alert to Phishing & Scams</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Don’t click suspicious links or provide personal info to unknown
                 sources.
               </p>
@@ -131,7 +131,7 @@ export default function Dataprivacy() {
             <div className="card">
               <div className="feature-icon">🧹</div>
               <h3>Clear Old Travel Data</h3>
-              <p>
+              <p style={{color:"black"}}>
                 Regularly remove outdated itineraries, history logs, and unused
                 travel records.
               </p>
@@ -142,9 +142,9 @@ export default function Dataprivacy() {
 
       {/* Footer */}
       <footer>
-        <p>
-          © 2025 Smart Tourist Safety System. Designed with ❤️ by Pranjal
-          Jaiswal for your security.
+        <p style={{color:"black"}}>
+          © 2025 Smart Tourist Safety System. Designed with ❤️ by Team
+          CodeX_Crew for your security.
         </p>
       </footer>
     </>

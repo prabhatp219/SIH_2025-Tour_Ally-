@@ -6,7 +6,7 @@ export default function Touristinsights() {
       {/* Section Header */}
       <div className="section-header">
         <h1>Tourist Insights</h1>
-        <p>
+        <p style={{color:"black"}}>
           Smart analytics help improve tourism services and ensure a safer, better experience for visitors.
         </p>
       </div>
@@ -27,25 +27,25 @@ export default function Touristinsights() {
         </div>
         <div className="card">
           <h3>Improve Safety</h3>
-          <p>
+          <p >
             Monitor incident reports and identify high-risk areas to ensure visitor safety.
           </p>
         </div>
         <div className="card">
           <h3>Boost Local Economy</h3>
-          <p>
+          <p >
             Guide tourists toward local attractions and businesses, increasing community revenue.
           </p>
         </div>
         <div className="card">
           <h3>Analyze Visitor Trends</h3>
-          <p>
+          <p >
             Understand where tourists go most frequently and what activities they prefer.
           </p>
         </div>
         <div className="card">
           <h3>Reduce Environmental Impact</h3>
-          <p>
+          <p >
             Track tourist activity to minimize strain on natural resources and preserve sites.
           </p>
         </div>

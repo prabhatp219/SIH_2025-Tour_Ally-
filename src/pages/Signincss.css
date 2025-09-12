@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #ffffff; /* white background */
+  color: #000; /* default text color black */
+}
+
+/* Dark blue background only for Signin */
+.signin-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #001f3f; /* dark navy blue */
+}
+
+.signin-card {
+  background: #ffffff; /* white card */
+  padding: 40px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* light shadow */
+  text-align: center;
+  border: 1px solid #ccc; /* light grey border */
+}
+
+
+.signin-card h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #000; /* heading black */
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.social-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-btn { background: #4285F4; }
+.github-btn { background: #333; }
+.gitlab-btn { background: #FC6D26; }
+
+.or {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #555; /* grey text */
+}
+
+form input {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f0f0f0; /* light grey input background */
+  color: #000; /* black text */
+}
+
+/* Placeholder text */
+form input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #000; /* black button */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff; /* white text */
+}
+
+.signin-btn:hover {
+  background: #333; /* slightly lighter on hover */
+}
+
+.terms {
+  font-size: 12px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.terms a {
+  color: #000;
+  text-decoration: none;
+}
+
+.login-link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-link a {
+  color:blue;
+  text-decoration: none;
+}
+
+.message {
+  margin-top: 10px;
+  color: red; /* error messages in red */
+  font-size: 14px;
+}

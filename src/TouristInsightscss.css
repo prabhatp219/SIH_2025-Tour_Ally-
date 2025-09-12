@@ -33,7 +33,7 @@
 
 /* Individual Card */
 .card {
-  background: #1e293b; /* dark slate */
+  background: #E5F5DF; /* dark slate */
   padding: 25px 20px;
   border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -49,7 +49,7 @@
 /* Card Title */
 .card h3 {
   font-size: 1.3rem;
-  color: #f97316; /* reddish-orange accent */
+  color: #38bdf8; /* reddish-orange accent */
   margin-bottom: 12px;
   font-weight: bold;
 }
@@ -57,6 +57,6 @@
 /* Card Text */
 .card p {
   font-size: 1rem;
-  color: #e2e8f0;
+  color: black;
   line-height: 1.5;
 }

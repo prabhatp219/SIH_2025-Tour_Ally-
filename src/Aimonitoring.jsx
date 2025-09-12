@@ -133,14 +133,15 @@ export default function Aimonitoring() {
       <main>
         <div className="card">
           <h3>Tourist Info</h3>
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="ID" />
-          <p>Enter details for monitoring and alerts.</p>
+          <input  type="text" placeholder="Name" style={{fontWeight:"bold"}} />
+          <input type="text" placeholder="ID"  style={{fontWeight:"bold"}} />
+          
+          <p  style={{ color:"black", fontWeight:"bold"}}>Enter details for monitoring and alerts.</p>
         </div>
 
         <div className="card">
           <h3>Monitoring Status</h3>
-          <p>Detecting inactivity and route deviations in real-time.</p>
+          <p  style={{ color:"black", fontWeight:"bold"}}>Detecting inactivity and route deviations in real-time.</p>
           <div className="log-panel" ref={logPanelRef}>
             No alerts yet.
           </div>
@@ -153,7 +154,7 @@ export default function Aimonitoring() {
 
         <div className="card">
           <h3>Safety Tips</h3>
-          <p>
+          <p  style={{ color:"black", fontWeight:"bold"}}>
             Stay hydrated, follow local guidelines, and avoid restricted or
             danger-prone areas. Alerts will show automatically if deviation
             occurs.

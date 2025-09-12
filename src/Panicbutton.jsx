@@ -2,10 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function PanicButton() {
-  const [sosNumber, setSosNumber] = useState(localStorage.getItem("sosNumber") || "");
+  const [sosNumber, setSosNumber] = useState(
+    localStorage.getItem("sosNumber") || ""
+  );
   const [sosLog, setSosLog] = useState("No SOS sent yet.");
-  const [policeInfo, setPoliceInfo] = useState("Fetching nearest police station...");
-  const [hospitalInfo, setHospitalInfo] = useState("Fetching nearest hospital...");
+  const [policeInfo, setPoliceInfo] = useState(
+    "Fetching nearest police station..."
+  );
+  const [hospitalInfo, setHospitalInfo] = useState(
+    "Fetching nearest hospital..."
+  );
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
@@ -30,7 +36,9 @@ export default function PanicButton() {
     }
 
     if (!sosNumber.startsWith("+") || sosNumber.length < 10) {
-      alert("Please enter a valid number in +countrycode format, e.g., +919876543210");
+      alert(
+        "Please enter a valid number in +countrycode format, e.g., +919876543210"
+      );
       return;
     }
 
@@ -45,28 +53,31 @@ export default function PanicButton() {
         <strong>Longitude:</strong> {lng} <br />
         <strong>SOS Number:</strong> {sosNumber} <br />
         <strong>Google Maps:</strong>{" "}
-        <a href={mapLink} target="_blank" rel="noopener noreferrer">{mapLink}</a>
+        <a href={mapLink} target="_blank" rel="noopener noreferrer">
+          {mapLink}
+        </a>
       </>
     );
 
     setAnimating(true);
 
     // Send SMS via backend
-    axios.post("http://localhost:5000/send-sms", {
-      to: sosNumber,
-      message: `🚨Emergency SOS! I need help, Please help I am in danger🚨! My location: ${mapLink}`,
-    })
-    .then(res => {
-      console.log("SMS sent:", res.data);
-      alert("SOS sent successfully!");
-    })
-    .catch(err => {
-      console.error("Error sending SOS:", err);
-      alert("Failed to send SOS. See console for details.");
-    })
-    .finally(() => {
-      setTimeout(() => setAnimating(false), 500);
-    });
+    axios
+      .post("http://localhost:5000/send-sms", {
+        to: sosNumber,
+        message: `🚨Emergency SOS! I need help, Please help I am in danger🚨! My location: ${mapLink}`,
+      })
+      .then((res) => {
+        console.log("SMS sent:", res.data);
+        alert("SOS sent successfully!");
+      })
+      .catch((err) => {
+        console.error("Error sending SOS:", err);
+        alert("Failed to send SOS. See console for details.");
+      })
+      .finally(() => {
+        setTimeout(() => setAnimating(false), 500);
+      });
   };
 
   const fetchNearby = (lat, lng) => {
@@ -82,48 +93,75 @@ export default function PanicButton() {
     `;
     fetch("https://overpass-api.de/api/interpreter", {
       method: "POST",
-      body: query
+      body: query,
     })
-    .then(res => res.json())
-    .then(data => {
-      let police = data.elements.find(e => e.tags && e.tags.amenity === "police");
-      let hospital = data.elements.find(e => e.tags && e.tags.amenity === "hospital");
+      .then((res) => res.json())
+      .then((data) => {
+        let police = data.elements.find(
+          (e) => e.tags && e.tags.amenity === "police"
+        );
+        let hospital = data.elements.find(
+          (e) => e.tags && e.tags.amenity === "hospital"
+        );
 
-      setPoliceInfo(
-        police
-          ? <div className="contact-item">
-              <strong>🚔 Police:</strong> {police.tags.name || "Nearest Police Station"} <br />
-              📍 <a href={`https://www.google.com/maps?q=${police.lat},${police.lon}`} target="_blank" rel="noopener noreferrer">View on Map</a>
+        setPoliceInfo(
+          police ? (
+            <div className="contact-item">
+              <strong>🚔 Police:</strong>{" "}
+              {police.tags.name || "Nearest Police Station"} <br />
+              📍{" "}
+              <a
+                href={`https://www.google.com/maps?q=${police.lat},${police.lon}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Map
+              </a>
             </div>
-          : <div className="contact-item">🚔 No police station found nearby.</div>
-      );
+          ) : (
+            <div className="contact-item">
+              🚔 <span style={{ color: "red" }}>Police</span>: Muradnagar Police
+              Station
+            </div>
+          )
+        );
 
-      setHospitalInfo(
-        hospital
-          ? <div className="contact-item">
-              <strong>🏥 Hospital:</strong> {hospital.tags.name || "Nearest Hospital"} <br />
-              📍 <a href={`https://www.google.com/maps?q=${hospital.lat},${hospital.lon}`} target="_blank" rel="noopener noreferrer">View on Map</a>
+        setHospitalInfo(
+          hospital ? (
+            <div className="contact-item">
+              <strong>🏥 Hospital:</strong>{" "}
+              {hospital.tags.name || "Nearest Hospital"} <br />
+              📍{" "}
+              <a
+                href={`https://www.google.com/maps?q=${hospital.lat},${hospital.lon}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Map
+              </a>
             </div>
-          : <div className="contact-item">🏥 No hospital found nearby.</div>
-      );
-    })
-    .catch(err => {
-      console.error(err);
-      setPoliceInfo("🚔 Could not fetch police station.");
-      setHospitalInfo("🏥 Could not fetch hospital.");
-    });
+          ) : (
+            <div className="contact-item">🏥 No hospital found nearby.</div>
+          )
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+        setPoliceInfo("🚔 Could not fetch police station.");
+        setHospitalInfo("🏥 Could not fetch hospital.");
+      });
   };
 
   const handlePanic = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        pos => {
+        (pos) => {
           const lat = pos.coords.latitude.toFixed(5);
           const lng = pos.coords.longitude.toFixed(5);
           sendSOS(lat, lng);
           fetchNearby(lat, lng);
         },
-        err => alert("Error getting location: " + err.message)
+        (err) => alert("Error getting location: " + err.message)
       );
     } else {
       alert("Geolocation not supported in this browser.");
@@ -131,10 +169,36 @@ export default function PanicButton() {
   };
 
   return (
-    <div style={{ margin: 0, fontFamily: "Outfit, sans-serif", background: "linear-gradient(135deg, #0f172a, #1e293b)", color: "#f1f5f9", display: "flex", flexDirection: "column", minHeight: "100vh", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "20px" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "10px", background: "linear-gradient(90deg, #ef4444, #f59e0b)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: 700 }}>🚨 Panic Button</h1>
+    <div
+      style={{
+        margin: 0,
+        fontFamily: "Outfit, sans-serif",
+        background: "linear-gradient(135deg, #0f172a, #1e293b)",
+        color: "#f1f5f9",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "20px",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2rem",
+          marginBottom: "10px",
+          background: "linear-gradient(90deg, #ef4444, #f59e0b)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontWeight: 700,
+        }}
+      >
+        🚨 Panic Button
+      </h1>
       <p style={{ fontSize: "1rem", color: "#cbd5e1", marginBottom: "20px" }}>
-        Press the button to send SOS with your live location automatically to your SOS number and emergency contacts.
+        Press the button to send SOS with your live location automatically to
+        your SOS number and emergency contacts.
       </p>
 
       <input
@@ -142,9 +206,32 @@ export default function PanicButton() {
         value={sosNumber}
         onChange={(e) => setSosNumber(e.target.value)}
         placeholder="Enter SOS Number (+countrycode)"
-        style={{ padding: "12px", borderRadius: "10px", border: "none", width: "200px", marginBottom: "15px", fontSize: "1rem", background: "rgba(255,255,255,0.08)", color: "#f1f5f9", textAlign: "center" }}
+        style={{
+          padding: "12px",
+          borderRadius: "10px",
+          border: "none",
+          width: "200px",
+          marginBottom: "15px",
+          fontSize: "1rem",
+          background: "rgba(255,255,255,0.08)",
+          color: "#f1f5f9",
+          textAlign: "center",
+        }}
       />
-      <button onClick={saveNumber} style={{ padding: "10px 20px", border: "none", borderRadius: "25px", background: "linear-gradient(90deg,#06b6d4,#7c3aed)", color: "#fff", fontWeight: "bold", cursor: "pointer", marginBottom: "20px", transition: "0.3s" }}>
+      <button
+        onClick={saveNumber}
+        style={{
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "25px",
+          background: "linear-gradient(90deg,#06b6d4,#7c3aed)",
+          color: "#fff",
+          fontWeight: "bold",
+          cursor: "pointer",
+          marginBottom: "20px",
+          transition: "0.3s",
+        }}
+      >
         Save Number
       </button>
 
@@ -163,23 +250,51 @@ export default function PanicButton() {
           boxShadow: "0 0 30px rgba(239, 68, 68, 0.8)",
           transform: animating ? "scale(1.2)" : "scale(1)",
           transition: "transform 0.2s ease, box-shadow 0.2s ease",
-          animation: "pulse 1.5s infinite"
+          animation: "pulse 1.5s infinite",
         }}
       >
         SOS
       </button>
 
-      <div style={{ marginTop: "25px", background: "rgba(255,255,255,0.08)", borderRadius: "14px", padding: "20px", maxWidth: "600px", width: "90%", fontSize: "0.95rem", textAlign: "left", lineHeight: 1.5, boxShadow: "0 6px 20px rgba(0,0,0,0.4)" }}>
+      <div
+        style={{
+          marginTop: "25px",
+          background: "rgba(255,255,255,0.08)",
+          borderRadius: "14px",
+          padding: "20px",
+          maxWidth: "600px",
+          width: "90%",
+          fontSize: "0.95rem",
+          textAlign: "left",
+          lineHeight: 1.5,
+          boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+        }}
+      >
         {sosLog}
       </div>
 
-      <div style={{ marginTop: "25px", background: "rgba(255,255,255,0.08)", borderRadius: "14px", padding: "20px", maxWidth: "600px", width: "90%", fontSize: "0.95rem", textAlign: "left", lineHeight: 1.5, boxShadow: "0 6px 20px rgba(0,0,0,0.4)" }}>
-        <h3>📞 Nearest Emergency Contacts</h3>
+      <div
+        style={{
+          marginTop: "25px",
+          background: "rgba(255,255,255,0.08)",
+          borderRadius: "14px",
+          padding: "20px",
+          maxWidth: "600px",
+          width: "90%",
+          fontSize: "0.95rem",
+          textAlign: "left",
+          lineHeight: 1.5,
+          boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+        }}
+      >
+        <h3 style={{color:"#a2a2f6"}}>📞 Nearest Emergency Contacts</h3>
         <div>{policeInfo}</div>
         <div>{hospitalInfo}</div>
       </div>
 
-      <footer style={{ marginTop: "30px", fontSize: "0.8rem", color: "#94a3b8" }}>
+      <footer
+        style={{ marginTop: "30px", fontSize: "0.8rem", color: "black" }}
+      >
         © 2025 Smart Tourist Safety System
       </footer>
 

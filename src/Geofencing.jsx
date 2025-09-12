@@ -115,21 +115,21 @@ export default function Geofencing() {
         {/* Sidebar */}
         <div className="sidebar">
           <div className="card">
-            <h3>Geo-Fencing</h3>
-            <p>Alerts when tourists enter restricted or danger-prone areas.</p>
+            <h3 style={{color:"#38bdf8"}}>Geo-Fencing</h3>
+            <p style={{color:"black",fontWeight:"bold"}}>Alerts when tourists enter restricted or danger-prone areas.</p>
           </div>
           <div className="card">
-            <h3>Safety Tips</h3>
-            <p>
+            <h3 style={{color:"#38bdf8"}}>Safety Tips</h3>
+            <p style={{color:"black",fontWeight:"bold"}}>
               Follow local guidelines. Avoid high-risk regions during heavy rains or earthquakes.
             </p>
           </div>
           <div className="card">
-            <h3>Live Weather</h3>
-            <p>⛅ Currently: 32°C, Clear Skies (demo data)</p>
+            <h3 style={{color:"#38bdf8",fontWeight:"bold"}}>Live Weather</h3>
+            <p style={{color:"black",fontWeight:"bold"}}>⛅ Currently: 32°C, Clear Skies (demo data)</p>
           </div>
           <div className="card">
-            <h3>Alert Log</h3>
+            <h3 style={{color:"#38bdf8",fontWeight:"bold"}}>Alert Log</h3>
             <div className="log-panel" id="logPanel">
               No alerts yet.
             </div>
