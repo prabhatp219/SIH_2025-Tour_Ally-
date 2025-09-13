@@ -8,7 +8,8 @@ import './Geofencingcss.css'
 import './Panicbuttoncss.css'
 import './Aimonitoringcss.css'
 import './Dataprivacycss.css'
-import './Touristinsightscss.css'
+import './Insights.css'
+import './Chatbot.css'
 import './GpsLogsViewercss.css'
 import './pages/Signupcss.css'
 import './pages/Signincss.css'
@@ -22,6 +23,7 @@ import Touristinsights from './Touristinsights'
 import Signup  from './pages/Signup'
 import Signin  from './pages/Signin'
 import GpsLogsViewer from './GpsLogsViewer'
+import Chatbot from './chatbot'
 
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
         <Route path="/panicbutton" element={<Panicbutton />} />
         <Route path="/touristinsights" element={<Touristinsights />} />
         <Route path="/gpslogsviewer" element={<GpsLogsViewer />} />
+        <Route path="/chatbot" element={<Chatbot/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} /> 
       </Routes>

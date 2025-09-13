@@ -179,6 +179,27 @@ const Index7 = () => {
     >
       Generate Your Digital ID
     </Link>
+
+
+    <div
+            style={{
+              display: "inline-block",
+              marginLeft: "20px",
+              cursor: "pointer",
+              padding: "8px 16px",
+              backgroundColor: "#8abb35f0",
+              borderRadius: "5px",
+              color: "white",
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+            onClick={() => navigate("/chatbot")} // SPA navigation using React Router
+          >
+            ChatBot
+          </div> 
+
+
+
   </div>
 </section>
 

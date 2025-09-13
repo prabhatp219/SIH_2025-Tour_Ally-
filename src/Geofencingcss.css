@@ -118,6 +118,7 @@ main {
   padding: 40px 20px;
   width: 100%;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .map-placeholder:hover {
@@ -130,6 +131,7 @@ main {
   height: 100%;
   width: 100%;
   border-radius: 16px;
+  display: none;
 }
 
 /* ===== Footer ===== */
