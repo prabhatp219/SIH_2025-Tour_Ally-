@@ -25,8 +25,8 @@ import './Signupcss.css';
     console.log("`187")
     try {
       console.log("142");
-      // const res = await axios.post("http://localhost:3000/api/signup", form);
-      const res = await axios.post("https://smarttouristsafety.onrender.com/api/auth/signup", form);
+      const res = await axios.post("http://localhost:3000/api/signup", form);
+      // const res = await axios.post("https://smarttouristsafety.onrender.com/api/auth/signup", form);
       console.log("12892");
       // Show success message
       setMessage(res.data.message);

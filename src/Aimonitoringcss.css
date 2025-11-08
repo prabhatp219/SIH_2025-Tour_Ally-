@@ -127,6 +127,12 @@ main {
   border-radius: 12px;
   overflow: hidden;
 }
+/* #map {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  display: none;
+} */
 
 /* Safety Tips */
 .card p {

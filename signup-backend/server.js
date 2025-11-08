@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 // ------------------ Signup Route ------------------
-app.post("/api/auth/signup", async (req, res) => {
+app.post("/api/signup", async (req, res) => {
   console.log("Signup request body:", req.body);
 
   const { firstName, lastName, username, email, password } = req.body;
@@ -42,7 +42,7 @@ app.post("/api/auth/signup", async (req, res) => {
 
 
 // ------------------ Signin Route ------------------
-app.post("/api/auth/signin", async (req, res) => {
+app.post("/api/signin", async (req, res) => {
   const { email, password } = req.body;
 
   try {

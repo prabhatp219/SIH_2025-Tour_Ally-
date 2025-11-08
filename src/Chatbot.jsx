@@ -174,7 +174,7 @@ export default function Chatbot() {
         <div className="brand">
           <div className="logo">AI</div>
           <div>
-            <h1>Mini Chatbot</h1>
+            <h1>TourBot</h1>
             <p>Talk with AI (Text + Voice)</p>
           </div>
         </div>
