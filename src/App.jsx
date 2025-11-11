@@ -25,7 +25,7 @@ import Signup  from './pages/Signup'
 import Signin  from './pages/Signin'
 import GpsLogsViewer from './GpsLogsViewer'
 import Chatbot from './Chatbot'
-import Signupb from './Signupb'
+
 
 
 function App() {
@@ -45,7 +45,6 @@ function App() {
         <Route path="/chatbot" element={<Chatbot/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} /> 
-        <Route path="/signupb" element={<Signupb />} />
       </Routes>
     </>
   );
