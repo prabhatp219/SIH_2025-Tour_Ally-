@@ -21,8 +21,8 @@ export default function Signin() {
     console.log("Form data sent:", form);
 
     try {
-      const res = await axios.post("http://localhost:3000/api/signin", form);
-      // const res = await axios.post("https://smarttouristsafety.onrender.com/api/auth/login", form);
+      const res = await axios.post("https://tourally-backend.vercel.app/api/signin", form);
+
       setMessage(res.data.message); // success message
       console.log(res.data.message);
 
