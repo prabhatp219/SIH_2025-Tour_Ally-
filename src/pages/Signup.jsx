@@ -25,9 +25,8 @@ import './Signupcss.css';
     console.log("`187")
     try {
       console.log("142");
-      const API_URL = import.meta.env.VITE_API_URL;
-      const res = await axios.post(`${API_URL}/api/signup`, form);
-      // const res = await axios.post("https://smarttouristsafety.onrender.com/api/auth/signup", form);
+      // https://tourally-backend.vercel.app/
+      const res = await axios.post("https://tourally-backend.vercel.app/api/signup", form);
       console.log("12892");
       // Show success message
       setMessage(res.data.message);
