@@ -24,7 +24,7 @@ import Touristinsights from './Touristinsights'
 import Signup  from './pages/Signup'
 import Signin  from './pages/Signin'
 import GpsLogsViewer from './GpsLogsViewer'
-import Chatbot from './chatbot'
+import Chatbot from './Chatbot'
 
 
 function App() {
