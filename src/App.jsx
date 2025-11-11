@@ -14,7 +14,8 @@ import './GpsLogsViewercss.css'
 import './pages/Signupcss.css'
 import './pages/Signincss.css'
 import Id from "./Id";
-import Index7 from './index7'
+import Index7 from './Index7' //here
+
 import Aimonitoring from './Aimonitoring'
 import Dataprivacy from './Dataprivacy'
 import Geofencing from './Geofencing'
