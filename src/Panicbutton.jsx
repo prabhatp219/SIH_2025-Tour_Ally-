@@ -63,7 +63,7 @@ export default function PanicButton() {
 
     // Send SMS via backend
     axios
-      .post("http://localhost:5000/send-sms", {
+      .post("https://tour-ally-sos-backend.vercel.app/send-sms", {
         to: sosNumber,
         message: `🚨Emergency SOS! I need help, Please help I am in danger🚨! My location: ${mapLink}`,
       })
