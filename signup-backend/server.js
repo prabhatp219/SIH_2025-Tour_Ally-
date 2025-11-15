@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const User = require("./models/User");
+const adminRoutes = require("./routes/adminRoutes");
 require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/api/admin", adminRoutes);
 
 // MongoDB connection
 mongoose.connect('mongodb+srv://prabhat207:dQuaPuI7ScwvP0h2@cluster0.tzhv7ls.mongodb.net/')

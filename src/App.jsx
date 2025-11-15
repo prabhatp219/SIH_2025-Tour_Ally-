@@ -26,6 +26,9 @@ import Signin  from './pages/Signin'
 import GpsLogsViewer from './GpsLogsViewer'
 import Chatbot from './Chatbot'
 
+import AdminPage from "./pages/AdminPage";
+
+
 
 
 function App() {
@@ -45,6 +48,8 @@ function App() {
         <Route path="/chatbot" element={<Chatbot/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} /> 
+        <Route path="/admin" element={<AdminPage />} />
+
       </Routes>
     </>
   );
