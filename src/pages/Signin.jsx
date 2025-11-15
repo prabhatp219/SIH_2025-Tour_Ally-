@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import './Signincss.css'; // reuse the same CSS for consistency
+import "./Signincss.css"; // reuse the same CSS for consistency
 import api from "../api";
-
 
 export default function Signin() {
   const [form, setForm] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const [message, setMessage] = useState(""); // For success/error messages
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,26 +19,24 @@ export default function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data sent:", form);
 
     try {
       const res = await api.post("/api/signin", form);
 
-      setMessage(res.data.message); // success message
-      console.log(res.data.message);
+      // Save message
+      setMessage(res.data.message);
 
-      if (res.status === 200) {
-        localStorage.setItem("token", res.data.token); 
-        navigate("/"); // 
+      // Save token ALWAYS if it exists
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
       }
 
-      // Clear form fields after successful login
-      setForm({
-        email: "",
-        password: ""
-      });
+      // Redirect
+      navigate("/");
+
+      // Clear fields
+      setForm({ email: "", password: "" });
     } catch (err) {
-      // Show error message from backend
       setMessage(err.response?.data?.message || "Signin failed. Try again.");
     }
   };
@@ -68,7 +65,9 @@ export default function Signin() {
             required
           />
 
-          <button type="submit" className="signup-btn">Sign In</button>
+          <button type="submit" className="signup-btn">
+            Sign In
+          </button>
         </form>
 
         {message && <p className="message">{message}</p>}
