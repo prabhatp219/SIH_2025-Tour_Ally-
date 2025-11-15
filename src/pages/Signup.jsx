@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './Signupcss.css';
+import api from "../api";
 
   export default function Signup() {
     const [form, setForm] = useState({
@@ -26,7 +27,7 @@ import './Signupcss.css';
     try {
       console.log("142");
       // https://tourally-backend.vercel.app/
-      const res = await axios.post("https://tourally-backend.vercel.app/api/signup", form);
+      const res = await api.post("/api/signup", form);
       console.log("12892");
       // Show success message
       setMessage(res.data.message);
@@ -34,6 +35,7 @@ import './Signupcss.css';
       // Clear form fields
       // ✅ Navigate to home if signup is successful
 if (res.status === 201) {
+  localStorage.setItem("token", res.data.token);
   navigate("/");
 }
 

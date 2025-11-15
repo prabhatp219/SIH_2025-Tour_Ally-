@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './Signincss.css'; // reuse the same CSS for consistency
+import api from "../api";
+
 
 export default function Signin() {
   const [form, setForm] = useState({
@@ -21,12 +23,13 @@ export default function Signin() {
     console.log("Form data sent:", form);
 
     try {
-      const res = await axios.post("https://tourally-backend.vercel.app/api/signin", form);
+      const res = await api.post("/api/signin", form);
 
       setMessage(res.data.message); // success message
       console.log(res.data.message);
 
       if (res.status === 200) {
+        localStorage.setItem("token", res.data.token); 
         navigate("/"); // 
       }
 

@@ -28,7 +28,7 @@ import Chatbot from './Chatbot'
 
 import AdminPage from "./pages/AdminPage";
 
-
+import ProtectedRoute, { PublicOnly } from "./components/ProtectedRoute";
 
 
 function App() {
@@ -37,19 +37,18 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Index7 />} />
-        <Route path="/aimonitoring" element={<Aimonitoring />} />
-        <Route path="/id" element={<Id />} />
-        <Route path="/dataprivacy" element={<Dataprivacy />} />
-        <Route path="/geofencing" element={<Geofencing />} />
-        <Route path="/panicbutton" element={<Panicbutton />} />
-        <Route path="/touristinsights" element={<Touristinsights />} />
-        <Route path="/gpslogsviewer" element={<GpsLogsViewer />} />
-        <Route path="/chatbot" element={<Chatbot/>} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} /> 
-        <Route path="/admin" element={<AdminPage />} />
-
+        <Route path="/" element={<ProtectedRoute><Index7 /></ProtectedRoute>} />
+        <Route path="/aimonitoring" element={<ProtectedRoute><Aimonitoring /></ProtectedRoute>} />
+        <Route path="/id" element={<ProtectedRoute><Id /></ProtectedRoute>} />
+        <Route path="/dataprivacy" element={<ProtectedRoute><Dataprivacy /></ProtectedRoute>} />
+        <Route path="/geofencing" element={<ProtectedRoute><Geofencing /></ProtectedRoute>} />
+        <Route path="/panicbutton" element={<ProtectedRoute><Panicbutton /></ProtectedRoute>} />
+        <Route path="/touristinsights" element={<ProtectedRoute><Touristinsights /></ProtectedRoute>} />
+        <Route path="/gpslogsviewer" element={<ProtectedRoute><GpsLogsViewer /></ProtectedRoute>} />
+        <Route path="/chatbot" element={<ProtectedRoute><Chatbot/></ProtectedRoute>} />
+        <Route path="/signup" element={<PublicOnly><Signup /></PublicOnly>} /> 
+        <Route path="/signin" element={<PublicOnly><Signin /></PublicOnly>} /> 
+        <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
       </Routes>
     </>
   );
