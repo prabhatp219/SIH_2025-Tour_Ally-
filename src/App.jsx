@@ -17,7 +17,7 @@ import Id from "./Id";
 import Index7 from './Index7' //here
 
 import Aimonitoring from './Aimonitoring'
-import Dataprivacy from './Dataprivacy'
+import Dataprivacy from './Dataprivacy' 
 import Geofencing from './Geofencing'
 import Panicbutton from './Panicbutton'
 import Touristinsights from './Touristinsights'

@@ -17,7 +17,7 @@ app.use("/api/admin", adminRoutes);
 // MongoDB connection
 mongoose
   .connect(
-    "mongodb+srv://prabhat207:dQuaPuI7ScwvP0h2@cluster0.tzhv7ls.mongodb.net/"
+    "mongodb+srv://prabhat207:4vF2BMY5LYTX2iuh@cluster0.tzhv7ls.mongodb.net/?appName=Cluster0"
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
