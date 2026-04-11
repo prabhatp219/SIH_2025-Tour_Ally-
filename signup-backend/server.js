@@ -6,6 +6,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+console.log("NEW SERVER FILE DEPLOYED");
+
 const User = require("./models/User");
 const adminRoutes = require("./routes/adminRoutes");
 
