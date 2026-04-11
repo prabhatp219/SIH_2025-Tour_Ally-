@@ -15,10 +15,7 @@ app.use(express.json());
 app.use("/api/admin", adminRoutes);
 
 // MongoDB connection
-mongoose
-  .connect(
-    "mongodb+srv://prabhat207:4vF2BMY5LYTX2iuh@cluster0.tzhv7ls.mongodb.net/tourally-db"
-  )
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
@@ -118,6 +115,10 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-app.listen(PORT, () =>
-  console.log(`Server running on port http://localhost:${PORT}`)
-);
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () =>
+    console.log(`Server running on port http://localhost:${PORT}`)
+  );
+}
+
+module.exports = app;
