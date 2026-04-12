@@ -7,8 +7,8 @@
 }
 
 body {
-  background: white;
-  color: #f1f5f9;
+  background: #040912;
+  color: #c8e0eb;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -23,10 +23,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
-      white,
-      white
-    ),
+  background: linear-gradient(rgba(4,9,18,0.85), rgba(4,9,18,0.85)),
     url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80")
       no-repeat center/cover;
   text-align: center;
@@ -76,7 +73,7 @@ body {
 
 /* Cards */
 .card {
-  background: #E5F5DF;
+  background: #0b1628;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
@@ -114,15 +111,15 @@ section {
 }
 
 section:nth-of-type(even) {
-  background: white;
+  background: #070f1e;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: white;
-  color: #94a3b8;
+  background: #070f1e;
+  color: #5e8499;
   margin-top: 40px;
   border-radius: 12px 12px 0 0;
 }

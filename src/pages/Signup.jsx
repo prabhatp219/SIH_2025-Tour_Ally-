@@ -55,7 +55,8 @@ if (res.status === 201) {
   return (
     <div className="signup-page">
       <div className="signup-card">
-        <h2>Register with:</h2>
+        <div className="card-logo">TA</div>
+        <h2>Create an account</h2>
         <div className="social-buttons">
           <button className="google-btn" type="button">Google</button>
           {/* <button className="github-btn" type="button">Github</button> */}

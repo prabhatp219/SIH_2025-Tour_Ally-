@@ -44,7 +44,9 @@ export default function Signin() {
   return (
     <div className="signin-page">
       <div className="signin-card">
-        <h2>Login to your account</h2>
+        <div className="card-logo">TA</div>
+        <h2>Welcome back</h2>
+        <p className="subtitle">Sign in to your Tour Ally account</p>
 
         <form onSubmit={handleSubmit}>
           <input

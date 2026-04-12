@@ -1,123 +1,281 @@
+/* ================================================================
+   TOUR ALLY — SIGN UP
+   Tactical Dark · Emerald accents · Syne + IBM Plex + JetBrains
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #fff; /* changed to white */
-  color: #000; /* default text color black for readability */
-}
-
-.signup-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #040912;
+  color: #c8e0eb;
   min-height: 100vh;
-  background: #f5f5f5; /* light grey for the card area */
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ---- Page wrapper ---- */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #040912;
+  position: relative;
+  overflow: hidden;
+  padding: 36px 20px;
+}
+
+/* Ambient dot grid */
+.signup-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,245,160,0.07) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events: none;
+  animation: gridDrift 28s linear infinite;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 38px 38px; }
+}
+
+/* Ice-blue glow bottom-right (contrast with sign-in's emerald top-right) */
+.signup-page::after {
+  content: '';
+  position: fixed;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(56,207,255,0.06) 0%, transparent 65%);
+  bottom: -150px; left: -100px;
+  pointer-events: none;
+}
+
+.signup-page > * { position: relative; z-index: 1; }
+
+/* ---- Card ---- */
 .signup-card {
-  background: #ffffff; /* white card */
-  padding: 40px;
-  border-radius: 12px;
-  width: 400px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* lighter shadow for white background */
-  text-align: center;
-  
+  background: #0b1628;
+  border: 1px solid rgba(0,245,160,0.13);
+  border-radius: 20px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 40px rgba(0,245,160,0.05);
+  animation: cardIn 0.55s cubic-bezier(0.4,0,0.2,1) both;
 }
 
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Animated scan bar — reversed direction vs sign-in */
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38cfff, #00f5a0, #38cfff, transparent);
+  background-size: 200% 100%;
+  animation: scanBar 4s linear infinite reverse;
+  border-radius: 20px 20px 0 0;
+}
+
+@keyframes scanBar {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---- Logo chip ---- */
+.signup-card .card-logo {
+  width: 46px; height: 46px;
+  border: 1.5px solid #00f5a0;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #00f5a0;
+  margin: 0 auto 22px;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 16px rgba(0,245,160,0.2), inset 0 0 12px rgba(0,245,160,0.06);
+}
+
+/* ---- Heading ---- */
 .signup-card h2 {
-  margin-bottom: 20px;
-  font-weight: 500;
-  color: #000; /* heading black */
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
+/* ---- Social buttons ---- */
 .social-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 22px;
 }
 
 .social-buttons button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px 0;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-}
-
-.google-btn { background: #4285F4; }
-.github-btn { background: #333; }
-.gitlab-btn { background: #FC6D26; }
-
-.or {
-  margin: 15px 0;
-  font-size: 14px;
-  color: #555; /* darker grey for readability */
-}
-
-form input {
-  width: 100%;
-  padding: 12px 10px;
-  margin: 8px 0;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #f0f0f0; /* light grey input background */
-  color: #000; /* black text */
+  color: #5e8499;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
 }
 
-/* Placeholder text */
-form input::placeholder {
-  color: #888; /* grey placeholder text */
-  opacity: 1;
+.google-btn:hover {
+  background: rgba(66,133,244,0.12);
+  border-color: rgba(66,133,244,0.35);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-.name-fields {
+/* ---- OR divider ---- */
+.or {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #2e4a5c;
+  letter-spacing: 0.1em;
 }
 
-.name-fields input {
+.or::before, .or::after {
+  content: '';
   flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
 }
 
+/* ---- Form ---- */
+.signup-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* Name fields row */
+.name-fields { display: flex; gap: 10px; }
+.name-fields input { flex: 1; }
+
+/* Inputs */
+.signup-card input,
+.signup-card form input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  color: #c8e0eb;
+  font-size: 0.92rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.signup-card input:focus,
+.signup-card form input:focus {
+  border-color: #00f5a0;
+  background: rgba(0,245,160,0.04);
+  box-shadow: 0 0 0 3px rgba(0,245,160,0.08), 0 0 20px rgba(0,245,160,0.05);
+}
+
+.signup-card input::placeholder,
+.signup-card form input::placeholder {
+  color: #2e4a5c;
+}
+
+/* ---- Submit button ---- */
 .signup-btn {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #000; /* black button for contrast */
+  padding: 13px;
+  margin-top: 4px;
+  background: #00f5a0;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 10px;
+  color: #040912;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
-  color: #fff; /* white text on button */
+  transition: all 0.3s;
+  box-shadow: 0 0 24px rgba(0,245,160,0.3);
 }
 
 .signup-btn:hover {
-  background: #333; /* slightly lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 0 44px rgba(0,245,160,0.55), 0 8px 20px rgba(0,0,0,0.3);
 }
 
+.signup-btn:active { transform: translateY(0); }
+
+/* ---- Footer text ---- */
 .terms {
-  font-size: 12px;
-  color: #555; /* dark grey text */
-  margin-top: 10px;
+  font-size: 0.71rem;
+  color: #2e4a5c;
+  margin-top: 14px;
+  line-height: 1.65;
+  text-align: center;
 }
 
-.terms a {
-  color: #000; /* black link for white background */
-  text-decoration: none;
-}
+.terms a { color: #00f5a0; text-decoration: none; }
+.terms a:hover { color: #38cfff; }
 
 .login-link {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
+  margin-top: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #2e4a5c;
+  text-align: center;
+  letter-spacing: 0.04em;
 }
 
 .login-link a {
-  color: #000;
+  color: #00f5a0;
+  font-weight: 700;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-link a:hover { color: #38cfff; }
+
+/* ---- Error/success message ---- */
+.message {
+  margin-top: 12px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: rgba(255,61,90,0.08);
+  border: 1px solid rgba(255,61,90,0.22);
+  color: #ff8fa3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.04em;
 }

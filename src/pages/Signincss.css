@@ -1,122 +1,289 @@
+/* ================================================================
+   TOUR ALLY — SIGN IN
+   Tactical Dark · Emerald accents · Syne + IBM Plex + JetBrains
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #ffffff; /* white background */
-  color: #000; /* default text color black */
-}
-
-/* Dark blue background only for Signin */
-.signin-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #040912;
+  color: #c8e0eb;
   min-height: 100vh;
-  background: #001f3f; /* dark navy blue */
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ---- Page wrapper ---- */
+.signin-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #040912;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 20px;
+}
+
+/* Ambient dot grid — matches landing page */
+.signin-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,245,160,0.07) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events: none;
+  animation: gridDrift 28s linear infinite;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 38px 38px; }
+}
+
+/* Emerald radial glow top-left */
+.signin-page::after {
+  content: '';
+  position: fixed;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,245,160,0.07) 0%, transparent 65%);
+  top: -200px; right: -150px;
+  pointer-events: none;
+}
+
+.signin-page > * { position: relative; z-index: 1; }
+
+/* ---- Card ---- */
 .signin-card {
-  background: #ffffff; /* white card */
-  padding: 40px;
-  border-radius: 12px;
-  width: 400px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* light shadow */
-  text-align: center;
-  border: 1px solid #ccc; /* light grey border */
+  background: #0b1628;
+  border: 1px solid rgba(0,245,160,0.13);
+  border-radius: 20px;
+  padding: 48px 42px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 40px rgba(0,245,160,0.06);
+  animation: cardIn 0.55s cubic-bezier(0.4,0,0.2,1) both;
 }
 
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
 
+/* Animated emerald top bar */
+.signin-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f5a0, #38cfff, #00f5a0, transparent);
+  background-size: 200% 100%;
+  animation: scanBar 4s linear infinite;
+  border-radius: 20px 20px 0 0;
+}
+
+@keyframes scanBar {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---- Logo chip ---- */
+.signin-card .card-logo {
+  width: 46px; height: 46px;
+  border: 1.5px solid #00f5a0;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #00f5a0;
+  margin: 0 auto 22px;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 16px rgba(0,245,160,0.2), inset 0 0 12px rgba(0,245,160,0.06);
+}
+
+/* ---- Heading ---- */
 .signin-card h2 {
-  margin-bottom: 20px;
-  font-weight: 500;
-  color: #000; /* heading black */
+  font-family: 'Syne', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
+.signin-card .subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-align: center;
+  color: #2e4a5c;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+/* ---- Social buttons ---- */
 .social-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 22px;
 }
 
 .social-buttons button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px 0;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-}
-
-.google-btn { background: #4285F4; }
-.github-btn { background: #333; }
-.gitlab-btn { background: #FC6D26; }
-
-.or {
-  margin: 15px 0;
-  font-size: 14px;
-  color: #555; /* grey text */
-}
-
-form input {
-  width: 100%;
-  padding: 12px 10px;
-  margin: 8px 0;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #f0f0f0; /* light grey input background */
-  color: #000; /* black text */
-}
-
-/* Placeholder text */
-form input::placeholder {
-  color: #888;
-  opacity: 1;
-}
-
-.signin-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #000; /* black button */
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  color: #5e8499;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
-  color: #fff; /* white text */
+  transition: all 0.25s;
 }
 
-.signin-btn:hover {
-  background: #333; /* slightly lighter on hover */
+.google-btn:hover {
+  background: rgba(66,133,244,0.12);
+  border-color: rgba(66,133,244,0.35);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
+/* ---- OR divider ---- */
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #2e4a5c;
+  letter-spacing: 0.1em;
+}
+
+.or::before, .or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* ---- Form ---- */
+.signin-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.signin-card input,
+.signin-card form input {
+  width: 100%;
+  padding: 13px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  color: #c8e0eb;
+  font-size: 0.93rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.signin-card input:focus,
+.signin-card form input:focus {
+  border-color: #00f5a0;
+  background: rgba(0,245,160,0.04);
+  box-shadow: 0 0 0 3px rgba(0,245,160,0.08), 0 0 20px rgba(0,245,160,0.06);
+}
+
+.signin-card input::placeholder,
+.signin-card form input::placeholder {
+  color: #2e4a5c;
+}
+
+/* ---- Submit button ---- */
+.signup-btn {
+  width: 100%;
+  padding: 13px;
+  margin-top: 4px;
+  background: #00f5a0;
+  border: none;
+  border-radius: 10px;
+  color: #040912;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 24px rgba(0,245,160,0.3);
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 44px rgba(0,245,160,0.55), 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.signup-btn:active { transform: translateY(0); }
+
+/* ---- Footer text ---- */
 .terms {
-  font-size: 12px;
-  color: #555;
-  margin-top: 10px;
+  font-size: 0.72rem;
+  color: #2e4a5c;
+  margin-top: 14px;
+  line-height: 1.65;
+  text-align: center;
 }
 
-.terms a {
-  color: #000;
-  text-decoration: none;
-}
+.terms a { color: #00f5a0; text-decoration: none; }
+.terms a:hover { color: #38cfff; }
 
 .login-link {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
+  margin-top: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #2e4a5c;
+  text-align: center;
+  letter-spacing: 0.04em;
 }
 
 .login-link a {
-  color:blue;
+  color: #00f5a0;
+  font-weight: 700;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
+.login-link a:hover { color: #38cfff; }
+
+/* ---- Error message ---- */
 .message {
-  margin-top: 10px;
-  color: red; /* error messages in red */
-  font-size: 14px;
+  margin-top: 14px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: rgba(255,61,90,0.08);
+  border: 1px solid rgba(255,61,90,0.22);
+  color: #ff8fa3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-align: center;
+  letter-spacing: 0.04em;
 }
+
+/* ---- Name fields row (used in Signup) ---- */
+.name-fields { display: flex; gap: 10px; }
+.name-fields input { flex: 1; }
