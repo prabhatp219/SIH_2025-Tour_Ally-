@@ -25,12 +25,12 @@ const connectDB = async () => {
   if (isConnected) return;
 
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      dbName: "tourally-db",
-    });
+    await mongoose.connect(process.env.MONGO_URI);
 
     isConnected = true;
     console.log("MongoDB Connected");
+    console.log("Database:", mongoose.connection.name);
+    console.log("Host:", mongoose.connection.host);
   } catch (error) {
     console.error("MongoDB Connection Error:", error.message);
     throw error;
