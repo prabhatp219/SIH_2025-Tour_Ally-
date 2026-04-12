@@ -7,8 +7,8 @@
 }
 
 body {
-  background: white;
-  color: #f1f5f9;
+  background: #040912;
+  color: #c8e0eb;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -71,7 +71,7 @@ main {
 
 /* Cards */
 .card {
-  background: #E5F5DF;
+  background: #0b1628;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.35);
@@ -97,8 +97,8 @@ main {
   border-radius: 8px;
   border: none;
   outline: none;
-  background: white;
-  color: #f1f5f9;
+  background: rgba(255,255,255,0.06);
+  color: #c8e0eb;
   font-size: 0.9rem;
 }
 

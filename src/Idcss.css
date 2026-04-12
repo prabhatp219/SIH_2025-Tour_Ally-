@@ -8,9 +8,9 @@
 html, body, #root {
   width: 100%;
   min-height: 100%;
-  font-family: "Roboto", sans-serif;
-  background: white;
-  color: #f1f5f9;
+  font-family: "IBM Plex Sans", "Roboto", sans-serif;
+  background: #040912;
+  color: #c8e0eb;
   line-height: 1.6;
   overflow-x: hidden;
 }
