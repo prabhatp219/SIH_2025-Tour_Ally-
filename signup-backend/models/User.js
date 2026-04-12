@@ -30,4 +30,5 @@ const UserSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model("User", UserSchema,"tourist");
+const collectionName = process.env.USER_COLLECTION || "users";
+module.exports = mongoose.model("User", UserSchema, collectionName);
